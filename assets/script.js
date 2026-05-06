@@ -279,7 +279,7 @@ function populateCountrySelects() {
     countries.forEach((country) => {
       const option = document.createElement("option");
       option.value = country.ddi;
-      option.textContent = `${country.flag} ${country.name}`;
+      option.textContent = `${country.name} (${country.ddi})`;
       if (country.code === select.getAttribute("data-country-code")) {
         option.selected = true;
       }
