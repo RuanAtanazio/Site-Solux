@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.cjs",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "index.html",
+          "*.html",
+          "assets/**",
+          ".env.example"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server.cjs"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "server.cjs"
+    }
+  ],
+  "env": {
+    "PORT": "3000"
+  }
+}
