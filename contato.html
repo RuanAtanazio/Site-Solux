@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contato | Solux Tecnologia</title>
+    <meta name="description" content="Fale com a Solux Tecnologia para solicitar suporte, diagnóstico ou orçamento de sistemas.">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navegação principal">
+        <a class="brand" href="index.html"><img src="assets/solux-logo-principal.png" alt=""><span class="brand-name"><strong>Solux</strong><span>Tecnologia</span></span></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links"><a href="index.html">Início</a><a href="servicos.html">Serviços</a><a href="artigos.html">Artigos</a><a href="sobre.html">Sobre nós</a><a href="central-cliente.html">Central do cliente</a><a href="agendamentos.html">Agendamentos</a><a class="button active" href="contato.html">Contato</a></div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="breadcrumb">Início / Contato</div>
+          <span class="eyebrow">Contato</span>
+          <h1>Fale com a Solux para dúvidas, orçamento ou parceria.</h1>
+          <p>Este canal é para mensagens gerais. Para marcar um horário com data e urgência, use a área de agendamentos.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container contact-page">
+          <div class="contact-options">
+            <article class="card contact-option">
+              <span class="tag">E-mail</span>
+              <h3>Atendimento direto</h3>
+              <p>Use para dúvidas, propostas, parcerias e informações gerais.</p>
+              <strong>soluxtecnologialtda@gmail.com</strong>
+            </article>
+            <article class="card contact-option">
+              <span class="tag">Agenda</span>
+              <h3>Precisa de horário?</h3>
+              <p>Para suporte, diagnóstico ou reunião técnica, envie uma solicitação com data e melhor horário.</p>
+              <a class="button secondary" href="agendamentos.html">Ir para agendamentos</a>
+            </article>
+            <article class="card contact-option">
+              <span class="tag">Empresa</span>
+              <h3>Dados institucionais</h3>
+              <p>CNPJ: 61.082.261/0001-92</p>
+              <p>Atendimento remoto e presencial sob agenda.</p>
+            </article>
+          </div>
+
+          <form class="card form contact-form contact-short-form" action="/api/contato" method="POST">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honey-field">
+            <div class="form-heading">
+              <span class="eyebrow">Mensagem rápida</span>
+              <h2>Envie uma mensagem geral.</h2>
+            </div>
+            <div class="form-grid">
+              <div class="field"><label for="nome">Nome</label><input id="nome" name="Nome" autocomplete="name" required></div>
+              <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="telefone-contato">WhatsApp ou telefone</label><div class="phone-input-wrapper"><select id="pais-select-contato" class="country-select" data-country-code="BR"><option value="">Selecione país</option></select><input id="telefone-contato" name="Telefone/WhatsApp" placeholder="(XX) 99999-9999" autocomplete="tel"></div></div>
+              <div class="field"><label for="assunto">Assunto</label><select id="assunto" name="Assunto"><option>Dúvida geral</option><option>Orçamento</option><option>Parceria</option><option>Financeiro/administrativo</option><option>Outro assunto</option></select></div>
+              <div class="field full-field"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="Mensagem" placeholder="Escreva sua mensagem de forma breve. Se precisar marcar atendimento, use a aba Agendamentos." required></textarea></div>
+              <div class="field check-field full-field"><input id="privacidade-contato" type="checkbox" required><label for="privacidade-contato">Li e concordo com o uso dos dados para retorno do atendimento conforme a <a href="politica-privacidade.html">Política de privacidade</a>.</label></div>
+            </div>
+            <div class="notice" data-file-warning>Para enviar o contato, abra o site pelo endereço http://127.0.0.1:5500 ou publique em uma hospedagem com o servidor Node ativo. O envio por e-mail não funciona quando a página está aberta como arquivo local.</div>
+            <button class="button" type="submit">Enviar contato</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-bottom">© 2026 Solux Tecnologia. CNPJ: 61.082.261/0001-92. <a href="politica-privacidade.html">Política de privacidade</a>.</div></footer>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
+
+

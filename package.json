@@ -1,0 +1,11 @@
+{
+  "name": "solux-tecnologia-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site institucional da Solux Tecnologia com formulários enviados por e-mail.",
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs",
+    "dev": "node server.cjs"
+  }
+}

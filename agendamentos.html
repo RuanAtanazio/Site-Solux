@@ -1,0 +1,117 @@
+?<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agendamentos | Solux Tecnologia</title>
+    <meta name="description" content="Agende atendimento técnico, diagnóstico de TI ou reunião para criação de sistemas com a Solux Tecnologia.">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navegação principal">
+        <a class="brand" href="index.html"><img src="assets/solux-logo-principal.png" alt=""><span class="brand-name"><strong>Solux</strong><span>Tecnologia</span></span></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links"><a href="index.html">Início</a><a href="servicos.html">Serviços</a><a href="artigos.html">Artigos</a><a href="sobre.html">Sobre nós</a><a href="central-cliente.html">Central do cliente</a><a class="active" href="agendamentos.html">Agendamentos</a><a class="button" href="contato.html">Contato</a></div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="breadcrumb">Início / Agendamentos</div>
+          <span class="eyebrow">Agendamentos</span>
+          <h1>Solicite um horário para suporte, diagnóstico ou projeto de sistema.</h1>
+          <p>Preencha os dados da demanda para a Solux avaliar o melhor atendimento e retornar com prioridade.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container schedule-shell">
+          <form class="card form schedule-form" action="/api/agendamento" method="POST">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honey-field">
+
+            <div class="schedule-form-head">
+              <div>
+                <span class="eyebrow">Solicitação de atendimento</span>
+                <h2>Informe quando e como podemos ajudar.</h2>
+              </div>
+              <div class="schedule-steps" aria-label="Etapas do agendamento">
+                <span>1. Dados</span>
+                <span>2. Horário</span>
+                <span>3. Demanda</span>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-divider full-field">Dados do solicitante</div>
+              <div class="field">
+                <label for="nome">Nome completo</label>
+                <input id="nome" name="Nome" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="empresa">Empresa</label>
+                <input id="empresa" name="Empresa" autocomplete="organization" required>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="telefone">WhatsApp ou telefone</label>
+                <div class="phone-input-wrapper">
+                  <select id="pais-select" class="country-select" data-country-code="BR">
+                    <option value="">Selecione país</option>
+                  </select>
+                  <input id="telefone" name="Telefone/WhatsApp" placeholder="(XX) 99999-9999" autocomplete="tel" required>
+                </div>
+              </div>
+              <div class="form-divider full-field">Preferência de atendimento</div>
+              <div class="field">
+                <label for="data">Data preferencial</label>
+                <input id="data" name="Data preferencial" type="date" required>
+              </div>
+              <div class="field">
+                <label for="horario">Melhor horário</label>
+                <input id="horario" name="Melhor horário" type="time" required>
+              </div>
+              <div class="field">
+                <label for="tipo">Tipo de atendimento</label>
+                <select id="tipo" name="Tipo de atendimento" required>
+                  <option value="">Selecione</option>
+                  <option>Suporte técnico</option>
+                  <option>Criação de sistema</option>
+                  <option>Infraestrutura e redes</option>
+                  <option>Nuvem, backup e segurança</option>
+                  <option>Diagnóstico de TI</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="urgencia">Urgência</label>
+                <select id="urgencia" name="Urgência" required>
+                  <option value="">Selecione</option>
+                  <option>Baixa</option>
+                  <option>Média</option>
+                  <option>Alta</option>
+                  <option>Crítica</option>
+                </select>
+              </div>
+              <div class="field full-field">
+                <label for="necessidade">O que precisa?</label>
+                <textarea id="necessidade" name="O que precisa" placeholder="Descreva o problema, objetivo, sistema envolvido, quantidade de usuários ou qualquer detalhe importante." required></textarea>
+              </div>
+              <div class="field check-field full-field"><input id="privacidade-agendamento" type="checkbox" required><label for="privacidade-agendamento">Li e concordo com o uso dos dados para retorno do atendimento conforme a <a href="politica-privacidade.html">Política de privacidade</a>.</label></div>
+            </div>
+
+            <div class="notice" data-file-warning>Para enviar o agendamento, abra o site pelo endereço http://127.0.0.1:5500 ou publique em uma hospedagem com o servidor Node ativo. O envio por e-mail não funciona quando a página está aberta como arquivo local.</div>
+            <button class="button" type="submit">Solicitar agendamento</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-bottom">© 2026 Solux Tecnologia. CNPJ: 61.082.261/0001-92. <a href="politica-privacidade.html">Política de privacidade</a>.</div></footer>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
+
