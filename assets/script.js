@@ -243,3 +243,49 @@ if (document.readyState === "loading") {
 } else {
   initTypingEffect();
 }
+
+// Preencher selects de país
+const countries = [
+  { name: "Brasil", code: "BR", ddi: "+55" },
+  { name: "Estados Unidos", code: "US", ddi: "+1" },
+  { name: "Argentina", code: "AR", ddi: "+54" },
+  { name: "México", code: "MX", ddi: "+52" },
+  { name: "Colômbia", code: "CO", ddi: "+57" },
+  { name: "Peru", code: "PE", ddi: "+51" },
+  { name: "Chile", code: "CL", ddi: "+56" },
+  { name: "Venezuela", code: "VE", ddi: "+58" },
+  { name: "Canadá", code: "CA", ddi: "+1" },
+  { name: "Portugal", code: "PT", ddi: "+351" },
+  { name: "Espanha", code: "ES", ddi: "+34" },
+  { name: "França", code: "FR", ddi: "+33" },
+  { name: "Alemanha", code: "DE", ddi: "+49" },
+  { name: "Itália", code: "IT", ddi: "+39" },
+  { name: "Reino Unido", code: "GB", ddi: "+44" },
+  { name: "Austrália", code: "AU", ddi: "+61" },
+  { name: "Japão", code: "JP", ddi: "+81" },
+  { name: "China", code: "CN", ddi: "+86" },
+  { name: "Índia", code: "IN", ddi: "+91" },
+  { name: "Singapura", code: "SG", ddi: "+65" },
+];
+
+function populateCountrySelects() {
+  const selects = document.querySelectorAll(".country-select");
+  
+  selects.forEach((select) => {
+    countries.forEach((country) => {
+      const option = document.createElement("option");
+      option.value = country.ddi;
+      option.textContent = `${country.name} (${country.ddi})`;
+      if (country.code === select.getAttribute("data-country-code")) {
+        option.selected = true;
+      }
+      select.appendChild(option);
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", populateCountrySelects);
+} else {
+  populateCountrySelects();
+}
