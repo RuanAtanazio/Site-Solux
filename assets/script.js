@@ -293,3 +293,33 @@ if (document.readyState === "loading") {
 } else {
   populateCountrySelects();
 }
+
+// Máscara de telefone
+function initPhoneMask() {
+  const phoneInputs = document.querySelectorAll("input[type='tel'], input[name*='Telefone']");
+  
+  phoneInputs.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não é número
+      
+      if (value.length > 11) {
+        value = value.slice(0, 11); // Limita a 11 dígitos
+      }
+      
+      // Formata como: 11 9999-99999
+      if (value.length <= 2) {
+        e.target.value = value;
+      } else if (value.length <= 6) {
+        e.target.value = value.slice(0, 2) + " " + value.slice(2);
+      } else {
+        e.target.value = value.slice(0, 2) + " " + value.slice(2, 7) + "-" + value.slice(7);
+      }
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPhoneMask);
+} else {
+  initPhoneMask();
+}
