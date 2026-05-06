@@ -272,10 +272,14 @@ function populateCountrySelects() {
   const selects = document.querySelectorAll(".country-select");
   
   selects.forEach((select) => {
+    // Limpar options existentes (menos a primeira "Selecione país")
+    const firstOption = select.querySelector("option");
+    select.innerHTML = firstOption.outerHTML;
+    
     countries.forEach((country) => {
       const option = document.createElement("option");
       option.value = country.ddi;
-      option.textContent = `${country.flag} ${country.name} (${country.ddi})`;
+      option.textContent = `${country.flag} ${country.name}`;
       if (country.code === select.getAttribute("data-country-code")) {
         option.selected = true;
       }
